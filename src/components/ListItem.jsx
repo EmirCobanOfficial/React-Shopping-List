@@ -1,11 +1,18 @@
 import Item from "./Item";
 import NoItem from "./NoItem";
 
-export default function ListItem({ urunler }) {
+export default function ListItem({ items, onDeleteItem, onUpdateItem }) {
   return (
     <ul className="shopping-list list-unstyled">
-      {urunler.length > 0 ? (
-        urunler.map((i, index) => <Item urun={i} key={index} />)
+      {items.length > 0 ? (
+        items.map((i, index) => (
+          <Item
+            urun={i}
+            key={index}
+            onDeleteItem={onDeleteItem}
+            onUpdateItem={onUpdateItem}
+          />
+        ))
       ) : (
         <NoItem />
       )}
