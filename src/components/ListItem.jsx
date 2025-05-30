@@ -1,21 +1,14 @@
-export default function ListItem() {
+import Item from "./Item";
+import NoItem from "./NoItem";
+
+export default function ListItem({ urunler }) {
   return (
     <ul className="shopping-list list-unstyled">
-      <li className="border rounded p-2 mb-1 d-flex">
-        <input type="checkbox" className="form-check-input" />
-        <div className="item-name">Yumurta</div>
-        <i className="fs-3 bi bi-x text-danger delete-icon"></i>
-      </li>
-      <li className="border rounded p-2 mb-1 d-flex">
-        <input type="checkbox" className="form-check-input" />
-        <div className="item-name">Yumurta</div>
-        <i className="fs-3 bi bi-x text-danger delete-icon"></i>
-      </li>
-      <li className="border rounded p-2 mb-1 d-flex">
-        <input type="checkbox" className="form-check-input" />
-        <div className="item-name">Yumurta</div>
-        <i className="fs-3 bi bi-x text-danger delete-icon"></i>
-      </li>
+      {urunler.length > 0 ? (
+        urunler.map((i, index) => <Item urun={i} key={index} />)
+      ) : (
+        <NoItem />
+      )}
     </ul>
   );
 }
