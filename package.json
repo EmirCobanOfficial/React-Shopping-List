@@ -1,7 +1,8 @@
 {
-  "name": "react-state",
+  "name": "react-shopping-list",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "A simple shopping-list app with add, complete, filter and clear, built with React, Vite and Bootstrap.",
   "type": "module",
   "scripts": {
     "dev": "vite",
